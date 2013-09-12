@@ -16,14 +16,14 @@ Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强�
 == Installation ==
 
 1. Upload `qqworld-share` directory to `/wp-content/plugins/` directory
-上传 `qqworld-auto-save-images` 目录到 `/wp-content/plugins/` 文件夹
+上传 `qqworld-share` 目录到 `/wp-content/plugins/` 文件夹
 2. Activate the plugin through the 'Plugins' menu in WordPress
 在wordpress的 '插件' 菜单中激活该插件
 
 == Changelog ==
 
 = 1.0.1 =
-* Don't display share button in preview mode.
+* Preview mode does not display the Share button.
 预览模式下不现实分享按钮
 
 = 1.0 =
