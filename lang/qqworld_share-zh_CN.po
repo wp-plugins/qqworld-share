@@ -1,0 +1,113 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: QQworld Share\n"
+"Report-Msgid-Bugs-To: http://www.qqworld.org\n"
+"POT-Creation-Date: 2011-12-10 19:47:15+00:00\n"
+"PO-Revision-Date: 2013-09-08 15:16+0800\n"
+"Last-Translator: Micahel Wang  <admin@qqworld.org>\n"
+"Language-Team: QQWorld <admin@qqworld.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "QQWorld Share"
+msgstr "QQWorld分享"
+
+msgid "QQWorld Share Settings"
+msgstr "QQWorld分享设置"
+
+msgid ""
+"Activate this plug-in, will automatically display the following share button "
+"in the bottom of posts content or pages content."
+msgstr "开启本插件后，文章内容和页面内容的底部会显示以下分享按钮。"
+
+msgid "Share button icon style:"
+msgstr "分享按钮图标样式"
+
+msgid "Select the share button you want to use:"
+msgstr "选择要使用的分享按钮"
+
+msgid "Hold down the Ctrl key to multi-select."
+msgstr "按住Ctrl键可以多选。"
+
+msgid "Share to Sina Weibo"
+msgstr "分享到新浪微博"
+
+msgid "Share to Qzone"
+msgstr "分享到QQ空间"
+
+msgid "Share to QQ Friend"
+msgstr "分享给QQ好友"
+
+msgid "Share to Facebook"
+msgstr "分享到脸书(Facebook)"
+
+msgid "Share to Twitter"
+msgstr "分享到推特(Twitter)"
+
+msgid "Share to LinkedIn"
+msgstr "分享到LinkedIn"
+
+msgid "Share to Baidu Hi"
+msgstr "分享到百度空间"
+
+msgid "Share to Google+"
+msgstr "分享到Google+"
+
+msgid "Share to Jianghu of Taobao"
+msgstr "分享到淘江湖"
+
+msgid "Share to Tsohu"
+msgstr "分享到搜狐微博"
+
+msgid "Share to Tianya Community"
+msgstr "分享到天涯社区"
+
+msgid "Share to T.163"
+msgstr "分享到网易微博"
+
+msgid "Share to Penyou"
+msgstr "分享到朋友网"
+
+msgid "Share to T.tencent"
+msgstr "分享到腾讯微博"
+
+msgid "Share to Douban"
+msgstr "分享到豆瓣网"
+
+msgid "Share to kaixin001"
+msgstr "分享到开心网"
+
+msgid "Share to renren"
+msgstr "分享到人人网"
+
+msgid "QQWorld"
+msgstr "阿Q的世界"
+
+msgid "Wood"
+msgstr "木纹"
+
+msgid "Dark Metal"
+msgstr "暗黑金属"
+
+msgid "Stone"
+msgstr "岩石"
+
+msgid "Red Earth"
+msgstr "红土"
+
+msgid "Blueprint"
+msgstr "蓝图"
+
+msgid "Light Metal"
+msgstr "银亮金属"
+
+msgid "Like this article you may wish to share with my friends now!"
+msgstr "喜欢这篇文章吗，不妨分享给朋友们吧！"
+
+msgid "Show more."
+msgstr "显示更多"
