@@ -24,7 +24,7 @@ Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强�
 
 = 1.0.1 =
 * Preview mode does not display the Share button.
-预览模式下不现实分享按钮
+预览模式下不显示分享按钮
 
 = 1.0 =
 * tada. powerful plugin was born.
