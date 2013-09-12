@@ -3,7 +3,7 @@ Contributors: Michael Wang
 Tags: auto, save, local, collection, images
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,10 @@ Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强�
 在wordpress的 '插件' 菜单中激活该插件
 
 == Changelog ==
+
+= 1.0.1 =
+* Don't display share button in preview mode.
+预览模式下不现实分享按钮
 
 = 1.0 =
 * tada. powerful plugin was born.
