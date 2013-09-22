@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== QQWorld Share ===
 Contributors: Michael Wang
 Tags: share, china, theme
 Requires at least: 3.0
