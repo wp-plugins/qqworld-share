@@ -3,7 +3,7 @@ Contributors: Michael Wang
 Tags: share, china, theme
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 1.0.1
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,10 @@ Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强�
 在wordpress的 '插件' 菜单中激活该插件
 
 == Changelog ==
+
+= 1.0.3 =
+* Fixe a bug that made js error on no pic
+修正了bug：在无图片情况下会报JS错误
 
 = 1.0.1 =
 * Preview mode does not display the Share button.

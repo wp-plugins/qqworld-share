@@ -3,7 +3,7 @@
 Plugin Name: QQWorld Share
 Plugin URI: http://project.qqworld.org
 Description: Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强大的SNS、微博客、博客、书签分享工具，主要用于中国网站。
-Version: 1.0.2
+Version: 1.0.3
 Author: Michael Wang
 Author URI: http://project.qqworld.org
 */

@@ -7,7 +7,7 @@ function qqworld_plugin_share() {
 		var title = qqworld_share.title;
 		var summary = qqworld_share.summary;
 		var url = qqworld_share.url;
-		var pic = typeof qqworld_share.pic == 'string' ? qqworld_share.pic : qqworld_share.pic.join('|');
+		var pic = qqworld_share.pic == null ? '' : typeof qqworld_share.pic == 'string' ? qqworld_share.pic : qqworld_share.pic.join('|');
 		$(document).on('click', root + '.more', function() {
 			$(this).fadeOut('fast').parent().parent().css({height: 'auto', padding: '50px 0 0 0'});
 		}).on('click', root + '.weibo', function() {
