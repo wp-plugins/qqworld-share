@@ -142,13 +142,14 @@ class qqworld_share {
 		}
 	}
 	public function get_pics() {
+		global $post;
 		$pic = [];
 		$args = array(
 			'post_parent' => get_the_ID(),
 			'post_type' => 'attachment',
 			'post_mime_type' => 'image'
 		);
-		$images = &get_children( $args );
+		$images = get_children( $args );
 		if (!empty($images) )
 			foreach ($images as $image)
 				array_push($pic, $image->guid);
