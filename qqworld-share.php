@@ -3,7 +3,7 @@
 Plugin Name: QQWorld Share
 Plugin URI: http://project.qqworld.org
 Description: Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强大的SNS、微博客、博客、书签分享工具，主要用于中国网站。
-Version: 1.0.3
+Version: 1.1
 Author: Michael Wang
 Author URI: http://project.qqworld.org
 */
@@ -67,6 +67,7 @@ class qqworld_share {
 	public function init() {
 		register_setting('qqworld-share', 'qqworld-share-settings');
 		register_setting('qqworld-share', 'qqworld-share-theme');
+		register_setting('qqworld-share', 'qqworld-share-posttypes');
 	}
 	public function create_menu() {
 		add_submenu_page('options-general.php', __('QQWorld Share Settings', 'qqworld_share'), __('QQWorld Share', 'qqworld_share'), 'administrator', 'qqworld_share', array($this, 'fn') );
@@ -111,6 +112,18 @@ class qqworld_share {
 							<p class="description"><?php _e('Hold down the Ctrl key to multi-select.', 'qqworld_share')?></p>
 						</td>
 					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="buttons"><?php _e('Select the post type:', 'qqworld_share'); ?></label></th>
+						<td>
+							<?php
+							$post_types = get_post_types( '', 'object' ); 
+							foreach ( $post_types as $post_type ) :
+								$checked = in_array($post_type->name, get_option('qqworld-share-posttypes', array('post', 'page'))) ? ' checked="checked"' : '';
+							?>						
+								<label><input name="qqworld-share-posttypes[]" value="<?php echo $post_type->name; ?>" type="checkbox"<?php echo $checked; ?> /> <?php echo $post_type->labels->name; ?></label>
+							<?php endforeach; ?>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 			<?php submit_button(); ?>
@@ -141,6 +154,7 @@ class qqworld_share {
 			wp_localize_script('qqworld_share', 'qqworld_share', $translation_array, '1.0.0');
 		}
 	}
+
 	public function get_pics() {
 		global $post;
 		$pic = [];
@@ -156,8 +170,12 @@ class qqworld_share {
 		else $pic = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full')[0];
 		return $pic;
 	}
+
 	public function add_share($content, $theme = Null) {
-		if ( is_array($this->shareTo) && count($this->shareTo) > 0 && ( is_singular( array('post','page') ) && !is_preview() || is_admin() ) ) {
+		global $post;
+		if ( is_admin() || is_array($this->shareTo) && count($this->shareTo) > 0
+			&& ( is_singular( get_option('qqworld-share-posttypes', array('post', 'page')) )
+			&& !is_preview() ) ) {
 			$theme = empty($theme) ? $this->theme : $theme;
 			ob_start();
 	?>
