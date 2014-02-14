@@ -3,7 +3,7 @@ Contributors: Michael Wang
 Tags: share, china, theme
 Requires at least: 3.0
 Tested up to: 3.7
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,10 @@ Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强�
 在wordpress的 '插件' 菜单中激活该插件
 
 == Changelog ==
+
+= 1.2 =
+Optimize code, support php5.3-php5.5
+优化代码，支持PHP5.3-PHP5.5
 
 = 1.1 =
 * Add Feature: Select the post type to display share buttons.

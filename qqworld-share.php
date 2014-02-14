@@ -3,7 +3,7 @@
 Plugin Name: QQWorld Share
 Plugin URI: http://project.qqworld.org
 Description: Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强大的SNS、微博客、博客、书签分享工具，主要用于中国网站。
-Version: 1.1
+Version: 1.2
 Author: Michael Wang
 Author URI: http://project.qqworld.org
 */
@@ -157,7 +157,7 @@ class qqworld_share {
 
 	public function get_pics() {
 		global $post;
-		$pic = [];
+		$pic = array();
 		$args = array(
 			'post_parent' => get_the_ID(),
 			'post_type' => 'attachment',
@@ -167,7 +167,10 @@ class qqworld_share {
 		if (!empty($images) )
 			foreach ($images as $image)
 				array_push($pic, $image->guid);
-		else $pic = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full')[0];
+		else {
+			$full_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
+			$pic = $full_image[0];
+		}
 		return $pic;
 	}
 
@@ -183,8 +186,10 @@ class qqworld_share {
 				<div class="title"><?php _e('Like this article you may wish to share with my friends now!', 'qqworld_share'); ?></div>
 				<ul>
 					<li class="more" title="<?php _e('Show more.', 'qqworld_share'); ?>"></li>
-					<?php foreach ($this->shareTo as $key) : ?>
-					<li class="<?php echo $key; ?>" title="<?php _e( unserialize(QQWORLD_SHARE_PLUGIN_SETTINGS)[$key], 'qqworld_share' ); ?>"></li>
+					<?php foreach ($this->shareTo as $key) :
+						$settings = unserialize(QQWORLD_SHARE_PLUGIN_SETTINGS);
+					?>
+					<li class="<?php echo $key; ?>" title="<?php _e( $settings[$key], 'qqworld_share' ); ?>"></li>
 					<?php endforeach; ?>
 					<li class="clear"></li>
 				</ul>
