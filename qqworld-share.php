@@ -3,7 +3,7 @@
 Plugin Name: QQWorld Share
 Plugin URI: http://project.qqworld.org
 Description: Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强大的SNS、微博客、博客、书签分享工具，主要用于中国网站。
-Version: 1.2
+Version: 1.2.1
 Author: Michael Wang
 Author URI: http://project.qqworld.org
 */
@@ -139,7 +139,7 @@ class qqworld_share {
 		if ( is_singular( array('post','page') ) ) {
 			wp_register_style('qqworld_share', QQWORLD_SHARE_PLUGIN_URL. 'style/'.$this->theme.'.css');
 			wp_enqueue_style('qqworld_share');
-			wp_register_script('qqworld_share', QQWORLD_SHARE_PLUGIN_URL. 'js/share.js', 'jquery');
+			wp_register_script('qqworld_share', QQWORLD_SHARE_PLUGIN_URL. 'js/share.js', array('jquery'));
 			wp_enqueue_script('qqworld_share');
 			$pic = $this->get_pics();
 			if (is_array($pic)) 'new Array("' . implode('","', $pic) . '")';
