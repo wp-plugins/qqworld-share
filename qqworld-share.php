@@ -3,7 +3,7 @@
 Plugin Name: QQWorld Share
 Plugin URI: http://project.qqworld.org
 Description: Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强大的SNS、微博客、博客、书签分享工具，主要用于中国网站。
-Version: 1.2.1
+Version: 1.2.2
 Author: Michael Wang
 Author URI: http://project.qqworld.org
 */
@@ -51,7 +51,7 @@ class qqworld_share {
 		add_action( 'admin_menu', array($this, 'create_menu') );
 		add_action( 'admin_init', array($this, 'init') );
 		add_action( 'wp_enqueue_scripts', array($this, 'add_style') );
-		add_filter( 'the_content', array($this, 'add_share') );
+		if ( get_option('qqworld-share-mode', '1')=='1') add_filter( 'the_content', array($this, 'add_share') );
 		add_filter( 'plugin_row_meta', array($this, 'registerPluginLinks'),10,2 );
 	}
 	function registerPluginLinks($links, $file) {
@@ -68,6 +68,7 @@ class qqworld_share {
 		register_setting('qqworld-share', 'qqworld-share-settings');
 		register_setting('qqworld-share', 'qqworld-share-theme');
 		register_setting('qqworld-share', 'qqworld-share-posttypes');
+		register_setting('qqworld-share', 'qqworld-share-mode');
 	}
 	public function create_menu() {
 		add_submenu_page('options-general.php', __('QQWorld Share Settings', 'qqworld_share'), __('QQWorld Share', 'qqworld_share'), 'administrator', 'qqworld_share', array($this, 'fn') );
@@ -124,6 +125,33 @@ class qqworld_share {
 							<?php endforeach; ?>
 						</td>
 					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="buttons"><?php _e('Mode:', 'qqworld_share'); ?></label></th>
+						<td>
+						<?php $mode = get_option('qqworld-share-mode', '1'); ?>
+							<select name="qqworld-share-mode" id="mode">
+								<option value="1"<?php selected($mode, '1') ?>><?php _e('Automatic', 'qqworld_share'); ?></option>
+								<option value="2"<?php selected($mode, '2') ?>><?php _e('Manual', 'qqworld_share'); ?></option>
+							</select>
+							<p class="description">
+								<span id="mode-1"<?php if ($mode=='2') echo ' style="display: none;"'; ?>><?php _e('Automatic shown after post content', 'qqworld_share'); ?></span>
+								<span id="mode-2"<?php if ($mode=='1') echo ' style="display: none;"'; ?>><?php _e('Put<br /><strong>global $qqworld_share;<br />echo $qqworld_share->get_share();</strong><br /> in The Loop of template file', 'qqworld_share'); ?></span>
+							</p>
+							<script>
+							jQuery('#mode').on('change', function() {
+								var $ = jQuery;
+								var value = $(this).val();
+								if (value == '1') {
+									$('#mode-1').fadeIn('fast');
+									$('#mode-2').hide();
+								} else {
+									$('#mode-1').hide();
+									$('#mode-2').fadeIn('fast');
+								}
+							});
+							</script>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 			<?php submit_button(); ?>
@@ -171,10 +199,10 @@ class qqworld_share {
 			$full_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
 			$pic = $full_image[0];
 		}
-		return $pic;
+		return !empty($pic) ? $pic : '';
 	}
 
-	public function add_share($content, $theme = Null) {
+	public function get_share($theme = Null) {
 		global $post;
 		if ( is_admin() || is_array($this->shareTo) && count($this->shareTo) > 0
 			&& ( is_singular( get_option('qqworld-share-posttypes', array('post', 'page')) )
@@ -197,9 +225,13 @@ class qqworld_share {
 	<?php
 			$output = ob_get_contents();
 			ob_clean();
-			return $content . $output;
-		} else return $content;		
+			return $output;
+		} return '';
+	}
+
+	public function add_share($content, $theme = Null) {
+		return $content . $this->get_share($theme);
 	}
 }
-new qqworld_share;
+$GLOBALS['qqworld_share'] = new qqworld_share;
 ?>

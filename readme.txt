@@ -2,8 +2,8 @@
 Contributors: Michael Wang
 Tags: share, china, theme
 Requires at least: 3.0
-Tested up to: 3.9.1
-Stable tag: 1.2.1
+Tested up to: 3.9.2
+Stable tag: 1.2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,9 +22,9 @@ Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强�
 
 == Changelog ==
 
-= 1.2.1 =
-fix bug that share.js echoed before jquery.js
-修复share.js出现在jquery.js之前的bug
+= 1.2.2 =
+Fixed bug that js run error when no pic in content; add mode functional.
+修复当内容中没有图片，js报错的bug；添加模式功能。
 
 = 1.2 =
 Optimize code, support php5.3-php5.5
