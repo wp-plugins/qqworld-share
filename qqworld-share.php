@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: QQWorld Share
-Plugin URI: http://project.qqworld.org
+Plugin URI: https://wordpress.org/plugins/qqworld-share/
 Description: Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强大的SNS、微博客、博客、书签分享工具，主要用于中国网站。
 Version: 1.2.2
 Author: Michael Wang
-Author URI: http://project.qqworld.org
+Author URI: http://www.qqworld.org
 */
 
 define('QQWORLD_SHARE_PLUGIN_URL', plugin_dir_url(__FILE__));
