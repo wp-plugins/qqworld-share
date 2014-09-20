@@ -2,8 +2,9 @@
 	clear: both;
 	padding: 50px 70px 0 0;
 	position: relative;
-	height: 50px;
+	height: 32px;
 	overflow: hidden;
+	box-sizing: content-box;
 }
 .wp-admin .qqworld-share-container.jiathis {
 	padding: 0 70px 0 0;

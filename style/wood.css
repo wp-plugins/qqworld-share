@@ -4,6 +4,7 @@
 	position: relative;
 	height: 50px;
 	overflow: hidden;
+	box-sizing: content-box;
 }
 .wp-admin .qqworld-share-container.wood {
 	padding: 0 70px 0 0;

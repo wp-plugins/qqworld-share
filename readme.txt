@@ -3,7 +3,7 @@ Contributors: Michael Wang
 Tags: share, china, theme
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,9 @@ Powerful share tools for SNS, MicroBlog, Blog, Bootmark, Mainly for China. 强�
 在wordpress的 '插件' 菜单中激活该插件
 
 == Changelog ==
+
+= 1.2.3 =
+增加了样式的兼容性，强制使用 box-sizing: content-box;
 
 = 1.2.2 =
 Fixed bug that js run error when no pic in content; add mode functional.
