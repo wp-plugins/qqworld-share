@@ -1,4 +1,5 @@
 === QQWorld Share ===
+Contributors: qqworld
 Tags: share, china, theme
 Requires at least: 3.0
 Tested up to: 4.0.1
